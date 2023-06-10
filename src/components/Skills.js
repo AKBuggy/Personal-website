@@ -1,0 +1,80 @@
+import React from 'react'
+import python from '../assets/Logos/python.png'
+import mysql from '../assets/Logos/mysql.png'
+import java from '../assets/Logos/java.png'
+import ml from '../assets/Logos/machinelearning.png'
+import github from '../assets/Logos/github.png'
+import react from '../assets/Logos/react.png'
+import tailwind from '../assets/Logos/tailwind.png'
+
+export default function Skills() {
+
+    const skillText = '<Skills/>'
+    const techs = [
+        {
+            id: 1,
+            src: python,
+            title: 'Python',
+            style: 'shadow-yellow-500'
+        },
+        {
+            id: 2,
+            src: mysql,
+            title: 'MySQL',
+            style: 'shadow-orange-500'
+        },
+        {
+            id: 3,
+            src: java,
+            title: 'Java',
+            style: 'shadow-red-500'
+        },
+        {
+            id: 4,
+            src: ml,
+            title: 'Machine Learning',
+            style: 'shadow-purple-500'
+        },
+        {
+            id: 5,
+            src: github,
+            title: 'Github',
+            style: 'shadow-gray-500'
+        },
+        {
+            id: 6,
+            src: react,
+            title: 'React',
+            style: 'shadow-blue-500'
+        },
+        {
+            id: 7,
+            src: tailwind,
+            title: 'Tailwind',
+            style: 'shadow-blue-300'
+        },
+
+    ]
+    return (
+        <div name='Skills' className='bg-slate-100 w-full h-screen'>
+            <div className='max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full'>
+                <div className='md:mt-1 mt-44'>
+                    <p className='text-4xl font-bold bg-gradient-to-r from-slate-100 from-10% via-lime-400 via-30% to-slate-100 to-85% inline'>{skillText}</p>
+                </div>
+
+                <div className='w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0 md:mt-10 mt-10'>
+
+                    {
+                        techs.map(({ id, src, title, style }) => (
+                            <div key={id} className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}>
+                                <img src={src} alt="" className='w-20 mx-auto' />
+                                <p className='mt-4'>{title}</p>
+                            </div>
+                        ))
+                    }
+
+                </div>
+            </div>
+        </div>
+    )
+}
