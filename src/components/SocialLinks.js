@@ -15,7 +15,6 @@ export default function SocialLinks() {
                 </>
             ),
             href: 'https://www.linkedin.com/in/ankit-prakash-5b1a14202/',
-            style: 'text-black rounded-tr-md hover:from-blue-900 hover:to-blue-500 hover:text-white'
         },
         {
             id: 2,
@@ -25,7 +24,6 @@ export default function SocialLinks() {
                 </>
             ),
             href: 'https://github.com/AKBuggy',
-            style: 'text-black hover:from-black hover:to-blue-900 hover:text-white'
         },
         {
             id: 3,
@@ -40,11 +38,10 @@ export default function SocialLinks() {
             id: 4,
             child: (
                 <>
-                    Leetcode <SiLeetcode size={30} color='black'/>
+                    Leetcode <SiLeetcode size={30} />
                 </>
             ),
             href: 'https://leetcode.com/Ankit_Prakash/',
-            style: 'hover:from-black from-30% hover:via-gray-200 hover:to-yellow-300 text-white'
         },
         {
             id: 5,
@@ -54,7 +51,6 @@ export default function SocialLinks() {
                 </>
             ),
             href: 'https://www.instagram.com/_a_n_k_i.t_/',
-            style: 'hover:from-pink-500 hover:to-yellow-500'
         },
         {
             id: 6,
@@ -70,11 +66,10 @@ export default function SocialLinks() {
 
     ]
     return (
-        <div className='hidden lg:flex flex-col top-[35%] left-0 fixed'>
+        <div className='hidden lg:flex flex-col top-[30%] left-0 fixed dark:text-gray-300'>
             <ul>
-
                 {links.map(({id, child, href, style, download}) => (
-                    <li key={id} className={'flex justify-between items-center w-40 h-14 px-4 bg-gradient-to-r from-lime-500 from-30% to-lime ml-[-100px] rounded-lg hover:ml-[-10px] duration-300 hover:rounded-lg ' + style}>
+                    <li key={id} className={'flex justify-between items-center w-40 h-12 px-4  ml-[-100px] rounded-lg hover:ml-[-10px] duration-300 hover:rounded-lg dark:bg-slate-100' + style}>
                         <a href={href} className='flex justify-between items-center w-full' download={download} target='_blank' rel="noreferrer">
                             {child}
                         </a>

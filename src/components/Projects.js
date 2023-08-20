@@ -4,7 +4,7 @@ import textmanipulator from '../assets/projects/textmanipulator.png'
 
 export default function Projects() {
 
-    const projectText = '<Projects  />'
+    const projectText = 'Projects'
 
     const projects = [
         {
@@ -25,20 +25,20 @@ export default function Projects() {
     ]
 
     return (
-        <div name='Projects' className='bg-slate-100 w-full md:h-screen'>
+        <div name='Projects' className='bg-slate-100 dark:bg-gray-950 w-full md:h-full'>
             <div className='max-w-screen-lg p-4 mx-auto flex flex-col items-center justify-center w-full h-full'>
-                <div className='pb-8 mr-auto md:mt-0 mt-44'>
-                    <p className='text-4xl font-bold inline bg-gradient-to-r from-slate-100 from-10% via-lime-400 via-30% to-slate-100 to-85%'>{projectText}</p>
+                <div className='pb-8 mr-auto md:mt-44 mt-32'>
+                    <p className='text-4xl font-bold inline text-gray-950 dark:text-slate-100'>{projectText}</p>
                 </div>
 
                 <div className="md:max-w-screen-xl max-w-sm md:mx-0 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
                     {
                         projects.map(({ id, pname, desc, src, demohref, codehref }) => (
-                            <div key={id} className='rounded-lg overflow-hidden shadow-2xl hover:scale-105 duration-300 bg-gradient-to-r from-lime-500 to-lime' >
+                            <div key={id} className='rounded-lg overflow-hidden shadow-2xl md:hover:scale-105 duration-300 bg-gradient-to-r from-lime-500 to-slate-100 shadow-blue-900 dark:shadow-blue-900 dark:border-blue-900 border-2' >
                                 <img className="w-full" src={src} alt="Sunset in the mountains" />
                                 <div className="px-6 py-4">
-                                    <div className="font-bold text-xl mb-2">{pname}</div>
-                                    <p className="text-gray-700 text-base">
+                                    <div className="font-bold text-xl mb-2 text-gray-950 ">{pname}</div>
+                                    <p className="text-gray-950 text-base">
                                         {desc}
                                     </p>
                                 </div>

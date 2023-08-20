@@ -1,66 +1,101 @@
 import React, { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
 import { Link } from 'react-scroll';
 
-export default function Navbar() {
-  const ankitText = '<ANKIT/>'
-  const [nav, setNav] = useState(false);
+export default function Navbar({darkMode, setDarkMode}) {
+  const siteTitle = 'Ankit Prakash'; // Updated variable name
 
-  const links = [
+  const [navOpen, setNavOpen] = useState(false);
+
+  const toggleDarkMode = () => {
+    console.log("Toggle button clicked");
+    setDarkMode(!darkMode);
+  };
+
+
+  const navLinks = [
     {
       id: 1,
-      link: 'Home',
+      title: 'Home',
     },
     {
       id: 2,
-      link: 'About',
+      title: 'About',
     },
     {
       id: 3,
-      link: 'Education',
+      title: 'Education',
     },
     {
       id: 4,
-      link: 'Skills',
+      title: 'Skills',
     },
     {
       id: 5,
-      link: 'Projects',
+      title: 'Projects',
     },
     {
       id: 6,
-      link: 'Blog',
+      title: 'Blog',
     },
   ];
 
   return (
-    <div className='flex justify-between items-center w-full h-16 text-slate-200 fixed px-4 bg-slate-800'>
-      <div>
-        <h1 className='text-2xl font-bold font-signature ml-2 hover:animate-pulse cursor-pointer'>
-        {ankitText}</h1>
+    <>
+      <div className='flex justify-between items-center w-full h-16 dark:text-slate-200 fixed px-4 dark:bg-gray-950 bg-slate-100 text-gray-800'>
+        <div>
+          <h1 className='text-2xl font-bold ml-2 cursor-pointer'>
+            {siteTitle}
+          </h1>
+        </div>
+
+        <ul className='hidden md:flex mr-24'>
+          {navLinks.map(({ id, title }) => (
+            <li
+              key={id}
+              className='px-4 cursor-pointer font-medium text-xl dark:text-slate-200 text-gray-800 hover:text-lime-500 dark:hover:text-lime-500 hover:scale-150 duration-300 '
+            >
+              <Link to={title} smooth duration={500}>
+                {title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        
+
+        {/* Toggle Button */}
+        <div className="invisible md:visible">
+          <div
+            onClick={toggleDarkMode}
+            className={`cursor-pointer pr-4 z-10 ${darkMode ? 'text-slate-100' : 'text-gray-800'}`}
+          >
+            {darkMode ? <FaSun size={30} /> : <FaMoon size={30} />}
+          </div>
+        </div>
+
+        <div
+          onClick={() => setNavOpen(!navOpen)}
+          className='cursor-pointer text-gray-500 md:hidden ml-auto'
+        >
+          {navOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
+        </div>
+
       </div>
 
-      <ul className='hidden md:flex'>
-        {links.map(({ id, link }) => (
-          <li key={id} className='px-4 cursor-pointer font-medium text-slate-200 hover:scale-105 duration-100'>
-            <Link to={link} smooth duration={500}>{link}</Link>
-          </li>
-        ))}
-      </ul>
-
-      <div onClick={() => setNav(!nav)} className='cursor-pointer pr-4 z-10 text-gray-500 md:hidden'>
-        {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
-      </div>
-
-      {nav && (
-        <ul className='flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen overflow-y-auto bg-black'>
-          {links.map(({ id, link }) => (
+      {navOpen && (
+        <ul className='flex flex-col justify-center items-center top-0 left-0 w-full h-screen overflow-y-auto bg-slate-100 dark:bg-gray-950 text-gray-950 dark:text-slate-300 md:hidden'>
+          {navLinks.map(({ id, title }) => (
             <li key={id} className='px-4 cursor-pointer capitalize py-6 text-4xl'>
-              <Link onClick={() => setNav(!nav)} to={link} smooth duration={500}>{link}</Link>
+              <Link onClick={() => setNavOpen(!navOpen)} to={title} smooth duration={500}>
+                {title}
+              </Link>
             </li>
           ))}
         </ul>
       )}
-    </div>
+
+
+    </>
   );
 }

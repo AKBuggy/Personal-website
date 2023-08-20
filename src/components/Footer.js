@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa'
 import { HiOutlineMail } from 'react-icons/hi'
 import { SiLeetcode } from 'react-icons/si'
@@ -84,65 +83,23 @@ const Footer = () => {
     ]
 
 
-    const [visitorCount, setVisitorCount] = useState(0);
-    const [visitedSessions, setVisitedSessions] = useState({});
-
-    useEffect(() => {
-        const count = localStorage.getItem('visitorCount');
-        if (count) {
-            setVisitorCount(parseInt(count));
-        }
-    }, []);
-
-    useEffect(() => {
-        localStorage.setItem('visitorCount', visitorCount.toString());
-    }, [visitorCount]);
-
-    useEffect(() => {
-        const getSessionId = () => {
-            let sessionId = localStorage.getItem('sessionId');
-            if (!sessionId) {
-                sessionId = generateSessionId();
-                localStorage.setItem('sessionId', sessionId);
-            }
-            return sessionId;
-        };
-
-        const generateSessionId = () => {
-            const timestamp = new Date().getTime();
-            const randomId = Math.random().toString(36).substring(2, 10);
-            return `${timestamp}_${randomId}`;
-        };
-
-        const sessionId = getSessionId();
-
-        if (!visitedSessions[sessionId]) {
-            setVisitedSessions((prevSessions) => ({
-                ...prevSessions,
-                [sessionId]: true,
-            }));
-
-            setVisitorCount((prevCount) => prevCount + 1);
-        }
-    }, [visitedSessions]);
-
     return (
-        <footer className="bg-slate-800 text-gray-200">
-            <div className="mx-auto py-8 flex flex-col items-center">
+        <footer className="bg-slate-100 dark:bg-gray-950 shadow-2xl shadow-lime-500 dark:shadow-2xl dark:shadow-lime-500">
+            <div className="mx-auto py-8 flex flex-col items-center h-full">
                 <ul className='hidden md:flex'>
                     {footernav.map(({ id, link }) => (
-                        <li key={id} className='px-4 cursor-pointer font-medium text-slate-200 hover:scale-105 duration-100'>
+                        <li key={id} className='px-4 cursor-pointer font-medium text-gray-950 dark:text-slate-200 hover:scale-105 duration-100'>
                             <Link to={link} smooth duration={500}>{link}</Link>
                         </li>
                     ))}
                 </ul>
 
 
-                <p className="text-md m-2 text-gray-200">Visitors: {visitorCount}</p>
+           
                 <div className="flex space-x-4 m-5">
                     {
                         links.map(({ id, child, href }) => (
-                            <a key={id} href={href} className="text-gray-200 hover:text-gray-400 transition duration-300">
+                            <a key={id} href={href} className="text-gray-500 dark:text-gray-200 hover:text-gray-950 transition duration-300">
                                 {child}
                             </a>
                         ))
