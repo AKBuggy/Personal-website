@@ -49,7 +49,7 @@ export default function Home() {
           </div>
         </div>
         <div className='mt-14 md:mt-52'>
-          <img src={HeroImage} alt="My Profile" className='rounded-2xl mx-auto w-full shadow-lime-500 shadow-lg' />
+          <img src={HeroImage} alt="My Profile" className='rounded-2xl w-72 md:mx-auto md:w-full shadow-lime-500 shadow-lg' />
         </div>
       </div>
     </div>

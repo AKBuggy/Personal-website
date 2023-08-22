@@ -31,11 +31,11 @@ export default function Projects() {
                     <p className='text-4xl font-bold inline text-gray-950 dark:text-slate-100'>{projectText}</p>
                 </div>
 
-                <div className="md:max-w-screen-xl max-w-sm md:mx-0 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+                <div className="md:max-w-screen-xl max-w-xs md:mx-0 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
                     {
                         projects.map(({ id, pname, desc, src, demohref, codehref }) => (
-                            <div key={id} className='rounded-lg overflow-hidden shadow-2xl md:hover:scale-105 duration-300 bg-gradient-to-r from-lime-500 to-slate-100 shadow-blue-900 dark:shadow-blue-900 dark:border-blue-900 border-2' >
-                                <img className="w-full" src={src} alt="Sunset in the mountains" />
+                            <div key={id} className='rounded-lg overflow-hidden shadow-2xl duration-300 bg-gradient-to-r from-lime-500 to-slate-100 shadow-blue-900 dark:shadow-blue-900 dark:border-blue-900 border-2' >
+                                <img className="w-full" src={src} alt="" />
                                 <div className="px-6 py-4">
                                     <div className="font-bold text-xl mb-2 text-gray-950 ">{pname}</div>
                                     <p className="text-gray-950 text-base">
