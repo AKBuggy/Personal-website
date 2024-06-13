@@ -41,8 +41,7 @@ export default function SocialLinks() {
                     Leetcode <SiLeetcode size={30} />
                 </>
             ),
-            // href: 'https://leetcode.com/Ankit_Prakash/',
-            href: '#',
+            href: 'https://leetcode.com/Ankit_Prakash/',
         },
         {
             id: 5,

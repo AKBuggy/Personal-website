@@ -77,8 +77,7 @@ const Footer = () => {
                     <SiLeetcode size={20} />
                 </>
             ),
-            // href: 'https://leetcode.com/Ankit_Prakash/',
-            href: '#',
+            href: 'https://leetcode.com/Ankit_Prakash/',
         },
 
     ]
