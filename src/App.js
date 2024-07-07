@@ -31,7 +31,7 @@ function App() {
         <Education/>
         <Skills/>
         <Projects/>
-        <Blogs/>
+        {/* <Blogs/> */}
         <SocialLinks/>
         <Footer/>
       </div>

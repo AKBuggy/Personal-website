@@ -6,22 +6,28 @@ export default function Education() {
     const events = [
         {
             id: 1,
-            date: '2018-2020',
+            date: '2016-2018',
             title: 'Amrita Vidyalayam, Juinagar ',
             description: 'Class 10th (CBSE) - 88.2%'
         },
         {
             id: 2,
-            date: '2020-2022',
+            date: '2018-2020',
             title: 'SIES Junior College, Nerul',
             description: 'Class 12th (Maharashtra State Board) - 86.62%'
         },
         {
             id: 3,
-            date: '2023-06-01',
+            date: '2020-2023',
             title: 'St. Xaviers College, Mumbai (Autonomous)',
             description: 'Bachelor Of Science Information Technology-9.54 CGPA'
         },
+        {
+            id: 4,
+            date: '2023-2025',
+            title: 'Veermata Jijabai Technological Institute, Mumbai',
+            description: 'Master Of Computer Application - 9.23 CGPA'
+        }
     ]
 
     return (
@@ -36,7 +42,7 @@ export default function Education() {
                         events.map(({ id, date, title, description }) => (
                             <div key={id}>
                                 <div className="flex flex-col w-2 h-2 -mx-1 mt-8 dark:bg-slate-300 rounded-full border dark:border-white border-gray-900 bg-gray-700 hover:bg-lime-500 dark:hover:bg-lime-500 hover:scale-150"></div>
-                                <div className="mb-4 -mt-4 ml-4 bg-slate-800 dark:bg-slate-300 rounded-lg flex flex-col items-start justify-center md:hover:scale-125 duration-500">
+                                <div className="mb-4 -mt-4 ml-4 bg-slate-800 dark:bg-slate-300 rounded-lg flex flex-col items-start justify-center md:hover:scale-110 duration-500">
                                     <li className='px-8 flex flex-col justify-center m-5 font-signature '>
                                         <time className="mb-3 text-sm font-normal leading-none text-slate-100 dark:text-gray-950">{date}</time>
                                         <h3 className="text-lg font-semibold text-gray-100 dark:text-gray-950 mb-5">{title}</h3>
@@ -44,9 +50,6 @@ export default function Education() {
                                     </li>
                                 </div>
                             </div>
-
-
-
                         ))}
                 </ol>
 

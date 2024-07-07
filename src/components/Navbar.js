@@ -34,10 +34,10 @@ export default function Navbar({darkMode, setDarkMode}) {
       id: 5,
       title: 'Projects',
     },
-    {
-      id: 6,
-      title: 'Blog',
-    },
+    // {
+    //   id: 6,
+    //   title: 'Blog',
+    // },
   ];
 
   return (
@@ -53,7 +53,7 @@ export default function Navbar({darkMode, setDarkMode}) {
           {navLinks.map(({ id, title }) => (
             <li
               key={id}
-              className='px-4 cursor-pointer font-medium text-xl dark:text-slate-200 text-gray-800 hover:text-lime-500 dark:hover:text-lime-500 hover:scale-150 duration-300 '
+              className='px-4 cursor-pointer font-medium text-xl dark:text-slate-200 text-gray-800 hover:text-lime-500 dark:hover:text-lime-500 hover:scale-125 duration-300 '
             >
               <Link to={title} smooth duration={500}>
                 {title}

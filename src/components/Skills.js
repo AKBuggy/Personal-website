@@ -6,6 +6,7 @@ import ml from '../assets/Logos/machinelearning.png'
 import github from '../assets/Logos/github.png'
 import react from '../assets/Logos/react.png'
 import tailwind from '../assets/Logos/tailwind.png'
+import django from '../assets/Logos/django.png'
 
 export default function Skills() {
 
@@ -53,6 +54,12 @@ export default function Skills() {
             title: 'Tailwind',
             style: 'shadow-blue-300'
         },
+        {
+            id: 8,
+            src: django,
+            title: 'Django',
+            style: 'shadow-blue-300'
+        }
 
     ]
     return (

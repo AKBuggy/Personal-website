@@ -59,7 +59,7 @@ export default function SocialLinks() {
                     Resume <BsFillPersonLinesFill size={30} />
                 </>
             ),
-            href: '/AnkitPrakashResume.pdf',
+            href: '/VJTI_Resume_Ankit_Prakash.pdf',
             style: 'rounded-br-md',
             download: true,
         },

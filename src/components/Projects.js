@@ -1,6 +1,8 @@
 import React from 'react'
 import placeable from '../assets/projects/placeable.png'
 import textmanipulator from '../assets/projects/textmanipulator.png'
+import textsummarizer from '../assets/projects/summary-1.jpeg'
+import ams from '../assets/projects/ams.png'
 
 export default function Projects() {
 
@@ -22,6 +24,34 @@ export default function Projects() {
             codehref: 'https://github.com/AKBuggy/TextManipulator-React',
             demohref: 'https://text-manipulator-react.vercel.app/'
         },
+        {
+            id: 3,
+            pname: 'Text Summarizer',
+            desc: 'Text Summarizer is a tool that allows you to summarize any text.',
+            src: textsummarizer,
+            // codehref: 'https://github.com/AKBuggy/Placeable',
+        },
+        {
+            id: 4,
+            pname: 'Admissions maangement system',
+            desc: 'admissions management system is a tool that allows you to manage the admissions process for students.',
+            src: ams,
+            // codehref: '
+        },
+        {
+            id: 5,
+            pname: 'Portfolio',
+            desc: 'This is my portfolio website.',
+            src: ams,
+            codehref: 'https://github.com/AKBuggy/personal-website'
+        },
+        {
+            id: 6,
+            pname: 'Python Programming',
+            desc: 'General code snippets and programs written in Python.',
+            src: ams,
+            codehref: 'https://github.com/AKBuggy/Python_Programs'
+        }
     ]
 
     return (
